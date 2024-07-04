@@ -38,7 +38,7 @@ namespace RealEstate_Dapper_Api.Repositories.ServiceRepository
             throw new NotImplementedException();
         }
 
-        public void UpdateServicey(UpdateServiceDto updateServiceDto)
+        public void UpdateService(UpdateServiceDto updateServiceDto)
         {
             throw new NotImplementedException();
         }

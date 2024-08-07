@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RealEstate_Dapper_Api.Dtos.BottomGridDtos;
-using RealEstate_Dapper_Api.Dtos.CategoryDtos;
 using RealEstate_Dapper_Api.Repositories.BottomGridRepositories;
 
 namespace RealEstate_Dapper_Api.Controllers
@@ -27,7 +25,7 @@ namespace RealEstate_Dapper_Api.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateBottomGrid(CreateBottomGridDto  createBottomGridDto)
+        public async Task<IActionResult> CreateBottomGrid(CreateBottomGridDto createBottomGridDto)
         {
             _bottomGridRepository.CreateBottomGrid(createBottomGridDto);
             return Ok("Kategoryi Başarılı bir şekilde eklendi.");
@@ -43,7 +41,7 @@ namespace RealEstate_Dapper_Api.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateBottomGrid(UpdateBottomGridDto  updateBottomGridDto)
+        public async Task<IActionResult> UpdateBottomGrid(UpdateBottomGridDto updateBottomGridDto)
         {
             _bottomGridRepository.UpdateBottomGrid(updateBottomGridDto);
             return Ok("Kategori Başarılı şekilde güncellendi.");

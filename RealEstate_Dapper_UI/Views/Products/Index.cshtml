@@ -23,6 +23,7 @@
                                 <th scope="col">Sil</th>
                                 <th scope="col">Güncelle</th>
                                 <th scope="col">Sitede Gör</th>
+                                <th scope="col">Günün Fırsatı</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,14 +37,24 @@
                                     <td>@item.Title</td>
                                     <td>@item.Price</td>
                                     <td>@item.Type</td>
-                                    <td><a href="/Category/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
-                                    <td><a href="/Category/UpdateProduct/@item.ProductID" class="btn btn-outline-success">Güncelle</a></td>
-                                    <td><a href="/Category/ProductDetail/@item.ProductID" class="btn btn-outline-info">Sitede Gör</a></td>
+                                    <td><a href="/Products/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Products/UpdateProduct/@item.ProductID" class="btn btn-outline-success">Güncelle</a></td>
+                                    <td><a href="/Products/ProductDetail/@item.ProductID" class="btn btn-outline-info">Sitede Gör</a></td>
+                                    <td>
+                                        @if (item.DealOfTheDay == true)
+                                        {
+                                            <a href="/Products/ProductDealOfTheDayStatusChangeToFalse/@item.ProductID" class="btn btn-outline-secondary">Pasif Yap</a>
+                                        }
+                                        @if (item.DealOfTheDay == false)
+                                        {
+                                            <a href="/Products/ProductDealOfTheDayStatusChangeToTrue/@item.ProductID" class="btn btn-outline-warning">Aktif Yap</a>
+                                        }
+                                    </td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <a href="/Product/CreateProduct/" class="btn btn-outline-info">Yeni İlan Girişi</a>
+                    <a href="/Products/CreateProduct/" class="btn btn-outline-info">Yeni İlan Girişi</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using RealEstate_Dapper_UI.Dtos.CategoryDtos;
@@ -51,13 +50,13 @@ namespace RealEstate_Dapper_UI.Controllers
             return View();
         }
 
-         public async Task<IActionResult> ProductDealOfTheDayStatusChangeToFalse(int  id)
+        public async Task<IActionResult> ProductDealOfTheDayStatusChangeToFalse(int id)
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44300/api/Products/ProductDealOfTheDayStatusChangeToFalse/+ id");
             if (responseMessage.IsSuccessStatusCode)
             {
-               return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             return View();
         }

@@ -20,11 +20,11 @@ namespace RealEstate_Dapper_Api.Tools
             var signinCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var expireDate = DateTime.UtcNow.AddDays(JwtTokenDefaults.Expire);
             JwtSecurityToken token = new JwtSecurityToken(
-                                         issuer:JwtTokenDefaults.ValidIssuer,
-                                         audience:JwtTokenDefaults.ValidAudience,
-                                         claims:claims,
-                                         notBefore:DateTime.UtcNow,
-                                         expires:expireDate, 
+                                         issuer: JwtTokenDefaults.ValidIssuer,
+                                         audience: JwtTokenDefaults.ValidAudience,
+                                         claims: claims,
+                                         notBefore: DateTime.UtcNow,
+                                         expires: expireDate,
                                          signingCredentials: signinCredentials);
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             return new TokenResponseViewModel(tokenHandler.WriteToken(token), expireDate);
@@ -33,3 +33,4 @@ namespace RealEstate_Dapper_Api.Tools
 
         }
     }
+}

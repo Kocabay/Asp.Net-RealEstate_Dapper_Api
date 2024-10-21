@@ -13,7 +13,7 @@ namespace RealEstate_Dapper_UI.Controllers
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILoginService _loginService;
 
-        public EmployeeController(IHttpClientFactory httpClientFactory, ILoginService loginService = null)
+        public EmployeeController(IHttpClientFactory httpClientFactory, ILoginService loginService )
         {
             _httpClientFactory = httpClientFactory;
             _loginService = loginService;

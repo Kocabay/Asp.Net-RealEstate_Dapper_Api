@@ -1,13 +1,12 @@
-﻿@* @model List<RealEstate_Dapper_UI.Dtos.ProductDtos.ResultLast5ProductWithCategoryDto>
+﻿@model List<RealEstate_Dapper_UI.Dtos.ProductDtos.ResultLast5ProductWithCategoryDto>
 @{
     int count = 0;
 }
- 
 <div class="container-fluid pt-4 px-4">
     <div class="bg-light text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Son 5 Kiralık İlan</h6>
-            <a href="/Products/Index/">Tümünü Göster</a>
+            <a href="/Product/Index">Tüm İlanlara Git</a>
         </div>
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -27,10 +26,10 @@
                     {
                         count++;
                         <tr>
-                            <td> @count</td>
+                            <td>@count</td>
                             <td>@(((DateTime)item.AdvertisementDate).ToString("dd-MMM-yyyy"))</td>
                             <td>@item.Title</td>
-                            <td>@item.City- @item.District</td>
+                            <td>@item.City-@item.District</td>
                             <td>@item.CategoryName</td>
                             <td>@item.Price ₺</td>
                             <td><a class="btn btn-sm btn-primary" href="">İlanı Gör</a></td>
@@ -40,5 +39,4 @@
             </table>
         </div>
     </div>
-</div> *@
- 
+</div>

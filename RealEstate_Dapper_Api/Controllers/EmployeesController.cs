@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using RealEstate_Dapper_Api.Dtos.CategoryDtos;
+﻿using Microsoft.AspNetCore.Mvc;
 using RealEstate_Dapper_Api.Dtos.EmployeeDtos;
-using RealEstate_Dapper_Api.Repositories.CategoryRepository;
 using RealEstate_Dapper_Api.Repositories.EmployeeRepository;
 
 namespace RealEstate_Dapper_Api.Controllers
@@ -27,7 +24,7 @@ namespace RealEstate_Dapper_Api.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateEmployee(CreateEmployeeDto  createEmployeeDt)
+        public async Task<IActionResult> CreateEmployee(CreateEmployeeDto createEmployeeDt)
         {
             _employeeRepository.CreateEmployee(createEmployeeDt);
             return Ok("Personel Başarılı bir şekilde eklendi.");
@@ -43,7 +40,7 @@ namespace RealEstate_Dapper_Api.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateEmployee(UpdateEmployeeDto  updateEmployeeDto)
+        public async Task<IActionResult> UpdateEmployee(UpdateEmployeeDto updateEmployeeDto)
         {
             _employeeRepository.UpdateEmployee(updateEmployeeDto);
             return Ok("Personel Başarılı şekilde güncellendi.");

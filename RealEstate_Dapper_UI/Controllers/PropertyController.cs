@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using RealEstate_Dapper_UI.Dtos.ProductDetailDtos;
 using RealEstate_Dapper_UI.Dtos.ProductDtos;
 
 namespace RealEstate_Dapper_UI.Controllers
@@ -27,7 +28,42 @@ namespace RealEstate_Dapper_UI.Controllers
         [HttpGet]
         public async Task<IActionResult> PropertySingle(int id)
         {
+            id = 1;
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:44300/api/Products/GetProductByProductId?id=" + id);
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<ResultProductDtos>(jsonData);
+
+             
+            var client2 = _httpClientFactory.CreateClient();
+            var responseMessage2 = await client2.GetAsync("https://localhost:44300/api/ProductDetails/GetProductDetailByProductId?id=" + id);
+            var jsonData2 = await responseMessage.Content.ReadAsStringAsync();
+            var values2 = JsonConvert.DeserializeObject<GetProductDetailById>(jsonData);
+
+
+            ViewBag.title1 = values.Title.ToString();
+            ViewBag.price = values.Price;
+            ViewBag.adress = values.Adres;
+            ViewBag.city = values.City;
+            ViewBag.district = values.District;
+            ViewBag.type = values.Type;
+            
+            ViewBag.batcgount = values2.bathCount;
+            ViewBag.bedcount = values2.bedRoomCount;
+            ViewBag.size = values2.garageSize;
+            DateTime date1 = DateTime.Now;
+            DateTime date2 = values.AdvertisementDate;
+            TimeSpan timeSpan = date1- date2;
+            int month = timeSpan.Days;
+            ViewBag.datediff = month/30;
+
+
+
+
+
             return View();
+
+
         }
     }
 }

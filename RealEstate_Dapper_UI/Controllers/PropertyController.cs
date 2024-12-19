@@ -40,23 +40,37 @@ namespace RealEstate_Dapper_UI.Controllers
             var jsonData2 = await responseMessage.Content.ReadAsStringAsync();
             var values2 = JsonConvert.DeserializeObject<GetProductDetailById>(jsonData);
 
-
+            ViewBag.productID = values.ProductID;
             ViewBag.title1 = values.Title.ToString();
             ViewBag.price = values.Price;
-            ViewBag.adress = values.Adres;
             ViewBag.city = values.City;
             ViewBag.district = values.District;
+            ViewBag.address = values.Adres;
             ViewBag.type = values.Type;
-            
-            ViewBag.batcgount = values2.bathCount;
-            ViewBag.bedcount = values2.bedRoomCount;
-            ViewBag.size = values2.garageSize;
-            DateTime date1 = DateTime.Now;
-            DateTime date2 = values.AdvertisementDate;
-            TimeSpan timeSpan = date1- date2;
-            int month = timeSpan.Days;
-            ViewBag.datediff = month/30;
+            ViewBag.description = values.description;
+            ViewBag.date = values.AdvertisementDate;
+            ViewBag.slugUrl = values.SlugUrl;
 
+            ViewBag.roomCount = values2.roomCount;
+            ViewBag.bedCount = values2.bedRoomCount;
+            ViewBag.bathCount = values2.bathCount;
+            ViewBag.size = values2.productSize; // metrekare cinsinden boyutunu ifade etmektedir
+            ViewBag.garageCount = values2.garageSize;
+            ViewBag.buildYear = values2.buildYear;
+            ViewBag.location = values2.location;
+            ViewBag.videoUrl = values2.videoUrl;
+
+
+            DateTime date1 = DateTime.Now; // Simdiki zaman
+            DateTime date2 = values.AdvertisementDate; // ilanin yayin tarihi
+            TimeSpan timeSpan = date1 - date2; // Simdiki zaman ile ilan arasinda ne kadar gun var
+            int days = timeSpan.Days; // Gun sayisini 30'a bolunce ay bilgisine ulasilir. Fakat biz yalnizca gun sayisini gosterelim.
+
+            ViewBag.datediff = days;
+
+            // Slug Url olusturm islemi icin
+            //string slugFromTitle = CreateSlug(values.Title);
+            //ViewBag.slugUrl = slugFromTitle;
 
 
 

@@ -9,9 +9,11 @@
         public string District { get; set; }
         public int ProductCategory { get; set; }
         public string CoverImage { get; set; }
+        public string description { get; set; }
         public string Type { get; set; }
         public string Adres { get; set; }
         public bool DealOfTheDay { get; set; }
+        public string SlugUrl { get; set; }
         public DateTime AdvertisementDate { get; set; }
     }
 }

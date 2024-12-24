@@ -1,0 +1,41 @@
+﻿@model List<ResultCategoryDto>
+<section class="w3l-cover-3">
+    <div class="cover top-bottom">
+        <div class="container">
+            <div class="middle-section text-center">
+                <div class="section-width">
+                    <p>Hayalinizdeki Eve Sahip Olun!</p>
+                    <h2 class="mb-5">Bugün sizler için doğru mülkiyet bulalım.</h2>
+                     <form asp-action="PartialSearch" asp-controller="Default" class="w3l-cover-3-gd mt-5" method="post">
+                        <input type="search" name="text" placeholder="Anahtar kelimeyi giriniz." required>
+                        <span class="input-group-btn">
+                            <select class="btn btn-default" name="p" required>
+                                <option selected="p">Gayrimenkül</option>
+                                @foreach (var item in Model)
+                                {
+                                    <option value="@item.CategoryID">@item.CategoryName</option>
+                                }
+                            </select>
+                        </span>
+                        <span class="input-group-btn">
+                            <select class="btn btn-default" name="y" required>
+                                <option selected="y" name="">Şehir Seçiniz</option>
+                                <option>İstanbul</option>
+                                <option>Paris</option>
+                                <option>Milano</option>
+                                <option>Roma</option>
+                                <option>Lion</option>
+                                <option>Münih</option>
+                                <option>Berlin</option>
+                            </select>
+                        </span>
+                        <button type="submit" class="btn-primary">Ara</button>
+                    </form>
+                </div>
+                <section id="bottom" class="demo">
+                    <a href="#bottom"><span></span>İlan Listesi</a>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

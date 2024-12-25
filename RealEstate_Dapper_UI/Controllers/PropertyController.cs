@@ -28,11 +28,10 @@ namespace RealEstate_Dapper_UI.Controllers
 
         public async Task<IActionResult> PropertListWithSearch(string searchKeyValue, int propertyCategoryId, string city)
         {
-            ViewBag.v = TempData["word"];
-            ViewBag.v = TempData["wordy"];
-            searchKeyValue = "daire";
-            propertyCategoryId = 1;
-            city = "İzmir";
+      
+            searchKeyValue = TempData["searchKeyValue"].ToString();
+            propertyCategoryId = int.Parse(TempData["propertyCategoryId"].ToString());
+            city = TempData["city"].ToString();
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"https://localhost:44300/api/Products/ResultProductWithSearchList?searchKeyValue={searchKeyValue}&propertyCategoryId={propertyCategoryId}&city={city}");
             if (responseMessage.IsSuccessStatusCode)

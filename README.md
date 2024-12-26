@@ -2,8 +2,7 @@
 ## Projenin Genel Amacı
 
 ###
-Murat Yücedağ'ın YouTube'da yer alan RealEstate eğitim serisi ile birlikte projeyi geliştirip ardından projenin tüm eksiklerini kapatarak tamamladığım Gayrimenkul Web Sitesi; gerçek 
-dünya senaryolarına oldukça uygun hazırlanmıştır. Bu sitede Admin, Emlakçı ve Ana Sayfa için ayrı paneller hazırlanmış olup Json Web Token ile oturum işlemleri gerçekleştirilmiştir. 
+ Bu sitede Admin, Emlakçı ve Ana Sayfa için ayrı paneller hazırlanmış olup Json Web Token ile oturum işlemleri gerçekleştirilmiştir. 
 Kayıt Ol sayfası aracılığıyla kayıt olan kullanıcı varsayılan olarak Employee rolüne sahip olduğu için Emlakçı Paneli'ne yönlendirilmektedir. Kullanıcı bu panelde ilan yükleyebilir, yönetebilir, 
 ilgili ilana ait birden fazla görsel yüklemesi yapabilmektedir. Kurulan mesajlaşma sistemi ile kendisine gelen mesajları görüntüleyebilir veya sistemde var olan kullanıcılara mesaj atabilmektedir.
 
@@ -89,24 +88,6 @@ ASP.NET Core 8.0 Web API ve MVC kullanarak geliştirdiğim projemde, tüm CRUD i
 
 ### Kayıt Ol Sayfası
 ![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/registerPage.png)
-
-### Admin Paneli
-![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/AdminPanel1.png)
-
-### Admin Paneli - Mesaj Oluşturma Sayfası
-![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/AdminPanel3.png)
-
-### Admin Paneli - İlanlar Sayfası
-![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/AdminPanel4.png)
-
-### Admin Paneli - İlanlara Yüklenen Görseller Sayfası
-![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/AdminPanel5.png)
-
-### Admin Paneli - İlana Görsel Yükleme
-![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/AdminPanel6.png)
-
-### Admin Paneli - Yapılacaklar Sayfası
-![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/AdminPanel7.png)
 
 ### Emlakçı Paneli
 ![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/employeePanel1.png)

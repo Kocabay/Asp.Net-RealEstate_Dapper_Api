@@ -25,7 +25,7 @@
         <div class="inner mb-4">
             <ul class="blog-single-author-date align-items-center">
                 <li>
-                    <div class="listing-category"><span>@ViewBag.type</span></div>
+                    <div class="listing-category"><span>@ViewBag.type  </span></div>
                 </li>
                 <li><span class="fa fa-clock-o"></span> Yaklaşık @ViewBag.datediff Ay Önce İlana Eklendi</li>
                 <li><span class="fa fa-eye"></span> 250 kişi bu ilanı görüntüledi.</li>
@@ -51,7 +51,7 @@
             <div class="col-lg-8 w3l-news">
                 <div class="blog-single-post">
 
-                    @await Component.InvokeAsync("_ProperySliderComponentPartial")
+                    @await Component.InvokeAsync("_ProperySliderComponentPartial",new {id =ViewBag.i})
        
 
                     <div class="single-post-content">

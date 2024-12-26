@@ -89,6 +89,12 @@ ASP.NET Core 8.0 Web API ve MVC kullanarak geliştirdiğim projemde, tüm CRUD i
 ### Kayıt Ol Sayfası
 ![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/registerPage.png)
 
+### Admin Paneli 1
+![Ana sayfa]([url=https://hizliresim.com/mp1ac1b][img]https://i.hizliresim.com/mp1ac1b.jpg[/img][/url])
+
+### Admin Paneli 2
+![Ana sayfa](https://hizliresim.com/mp1ac1b)
+
 ### Emlakçı Paneli
 ![Ana sayfa](https://github.com/busraozdemir0/RealEstateSite/blob/master/RealEstate.UI/wwwroot/ProjectScreenShots/employeePanel1.png)
 
